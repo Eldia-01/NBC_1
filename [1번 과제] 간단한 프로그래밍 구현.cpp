@@ -22,9 +22,10 @@ int main()
 
 	Insertion(num, 5);
 
-	for (int i = 0; i < 5; i++) { num[i]; }
-
-	cout << "올림차순: " << num << endl;
+	for (int i = 0; i < 5; i++)
+	{
+		cout << num[i] << " ";
+	}
 
 	return 0;
 }
