@@ -1,10 +1,11 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
 int Sum(int num1, int num2, int num3, int num4, int num5);
 double Avg(int num1, int num2, int num3, int num4, int num5);
-void Select(int number[]);
+void Insertion(int num1[], int n);
 
 int main()
 {
@@ -18,7 +19,12 @@ int main()
 
 	cout << "넣은 숫자의 합계: " << Sum(num[0], num[1], num[2], num[3], num[4]) << endl;
 	cout << "넣은 숫자의 평균: " << Avg(num[0], num[1], num[2], num[3], num[4]) << endl;
-	cout << "입력 숫자의 오름차순 배열: " << Select(num[5]) << endl;
+
+	Insertion(num, 5);
+
+	for (int i = 0; i < 5; i++) { num[i]; }
+
+	cout << "올림차순: " << num << endl;
 
 	return 0;
 }
@@ -37,26 +43,18 @@ double Avg(int num1, int num2, int num3, int num4, int num5)
 	return totalAvg;
 }
 
-void Select(int number[])
+void Insertion(int num1[], int n)
 {
-	int j = 0;
-
-	for (int i = 1; i < 5; i++)
+	for (int i = 1; i < n; i++)
 	{
-		int key = number[i];
+		int key = num1[i];
+		int j = i - 1;
 
-		for (int j = i - 1; j >= 0; j--)
+		while (j >= 0 && num1[j] > key)
 		{
-			if (number[j] > key)
-			{
-				number[j + 1] = number[j];
-			}
-			else
-			{
-				break;
-			}
+			num1[j + 1] = num1[j];
+			j--;
 		}
-
-		number[j + 1] = key;
+		num1[j + 1] = key;
 	}
 }
