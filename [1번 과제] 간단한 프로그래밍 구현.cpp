@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int Sum(int* number, int size);
+int Sum(int number[], int size);
 double Avg(int num1, int num2, int num3, int num4, int num5);
 void Insertion(int num1[], int n);
 
@@ -30,7 +30,7 @@ int main()
 	return 0;
 }
 
-int Sum(int* number, int size)
+int Sum(int number[], int size)
 {
 	int x = 0;
 
