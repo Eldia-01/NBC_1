@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int Sum(int num1, int num2, int num3, int num4, int num5);
+int Sum(int* number, int size);
 double Avg(int num1, int num2, int num3, int num4, int num5);
 void Insertion(int num1[], int n);
 
@@ -17,7 +17,7 @@ int main()
 		cin >> num[i];
 	}
 
-	cout << "넣은 숫자의 합계: " << Sum(num[0], num[1], num[2], num[3], num[4]) << endl;
+	cout << "넣은 숫자의 합계: " << Sum(num, 5) << endl;
 	cout << "넣은 숫자의 평균: " << Avg(num[0], num[1], num[2], num[3], num[4]) << endl;
 
 	Insertion(num, 5);
@@ -30,11 +30,16 @@ int main()
 	return 0;
 }
 
-int Sum(int num1, int num2, int num3, int num4, int num5)
+int Sum(int* number, int size)
 {
-	int totalSum = num1 + num2 + num3 + num4 + num5;
+	int x = 0;
 
-	return totalSum;
+	for (int i = 0; i < size; i++)
+	{
+		x += number[i];
+	}
+
+	return x;
 }
 
 double Avg(int num1, int num2, int num3, int num4, int num5)
